@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terra Norte Travel Agency — Premium</title>
+  <meta name="description" content="Terra Norte Travel Agency — Northern Luzon tours, packages, and bookings."/>
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Terra Norte Travel Agency — Premium"/>
+  <meta property="og:description" content="Curated Northern Luzon tours: Ilocos Norte 3-day packages, itineraries, inclusions, and contact info. Book direct."/>
+  <meta property="og:image" content="https://preview.redd.it/t309j6y8yxw01.jpg?width=1280&crop=smart&auto=webp&s=d17d37c3e6672623f4912277bd3ac9e503994fbb"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://example.com/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-light:#f6fbff;
+      --bg-dark:#07101a;
+      --card:#fbfdff;
+      --muted:#6b7280;
+      --text:#0b1320;
+      --accent:#16a34a;
+      --accent-2:#6ee7b7;
+      --radius:14px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:linear-gradient(180deg,var(--bg-light), #ffffff);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:20px;
+    }
+    .site{width:100%;max-width:var(--maxw)}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 18px;border-radius:12px;
+      background:linear-gradient(180deg,rgba(7,16,26,0.04),rgba(255,255,255,0.02));
+      margin-bottom:18px;box-shadow:0 10px 30px rgba(8,18,28,0.04);
+    }
+    .nav-inner{display:flex;align-items:center;width:100%;}
+    .nav-left{display:flex;align-items:center;gap:14px;flex:0 0 auto}
+    .nav-center{flex:1 1 auto;display:flex;align-items:center;justify-content:center;}
+    .nav-right{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+    .logo{
+      width:64px;height:64px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,#ffffff, #f1fff4);border:1px solid rgba(8,18,28,0.04);box-shadow:0 6px 20px rgba(16,150,64,0.06)
+    }
+    .brand h1{margin:0;font-size:16px;letter-spacing:0.6px}
+    .brand .tag{font-size:12px;color:var(--muted)}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{color:var(--text);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
+    .menu a:hover{background:rgba(16,150,64,0.06)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700;border:none;cursor:pointer;}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(8,18,28,0.06);font-weight:600}
+    @media(max-width:980px){
+      .nav{padding:10px}
+      .brand h1{display:none}
+      .nav-center{display:none}
+    }
+    .hero{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(4,12,20,0.06);margin-bottom:18px}
+    .hero .hero-bg{width:100%;height:320px;background-image:url('https://travelthroughparadise.com/images/Articles/Blue_Lagoon_Beach/Beach%20Blue%20Lagoon%202-min.jpg');background-size:cover;background-position:center;filter:brightness(0.62)}
+    .hero .overlay{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:flex-start;padding:28px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.92));border-radius:12px;padding:16px;max-width:640px;box-shadow:0 10px 30px rgba(8,18,28,0.06);backdrop-filter: blur(6px)}
+    .hero-card h2{margin:0 0 6px 0;font-size:20px}
+    .hero-card p{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}.hero .overlay{padding:16px}.hero .hero-bg{height:220px}}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(9,20,32,0.03)}
+    h3{margin:0 0 8px 0;font-size:16px}
+    p.small{color:var(--muted);margin:0 0 12px 0;line-height:1.5}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+    .gallery-item{border-radius:10px;overflow:hidden;cursor:pointer;position:relative;border:1px solid rgba(8,18,28,0.03);background:#fff}
+    .gallery-item img{width:100%;height:110px;object-fit:cover;display:block;transition:transform .35s ease}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .caption{padding:8px;font-size:13px;font-weight:600;color:var(--muted);text-align:center;background:linear-gradient(180deg,rgba(255,255,255,0.98),transparent)}
+    .slider-wrapper{position:relative;width:100%;overflow:hidden;border-radius:12px;margin-bottom:10px}
+    .slider{display:flex;transition:transform 0.6s ease-in-out}
+    .slide{min-width:100%;height:320px;position:relative;flex-shrink:0}
+    .slide img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide-caption{position:absolute;bottom:12px;left:16px;background:rgba(0,0,0,0.45);color:white;padding:10px 12px;border-radius:8px;font-weight:700}
+    .slider-controls{position:absolute;top:50%;Width:100%;display:flex;justify-content:space-between;transform:translateY(-50%)}
+    .slider-controls button{background:rgba(0,0,0,0.35);border:none;color:white;padding:10px;border-radius:8px;cursor:pointer}
+    .slider-dots{display:flex;justify-content:center;margin-top:8px;gap:6px}
+    .dot{width:10px;height:10px;border-radius:50%;cursor:pointer;background:#ddd}
+    .dot.active{background:var(--accent)}
+    .form input, .form select, .form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(8,18,28,0.06);margin:8px 0;font-size:14px}
+    .muted{color:var(--muted);font-size:13px}
+    .lightbox{position:fixed;inset:0;background:rgba(3,8,12,0.75);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity .2s ease}
+    .lightbox.open{opacity:1;pointer-events:auto}
+    .lightbox img{max-width:92%;max-height:84%;border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,0.6)}
+    .footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+    .fade-up{opacity:0;transform:translateY(8px);transition:all .5s cubic-bezier(.2,.9,.3,1)}
+    .fade-up.visible{opacity:1;transform:none}
+    .mobile-cta{display:none}
+    @media(max-width:640px){
+      .mobile-cta{display:flex;position:fixed;left:12px;right:12px;bottom:14px;z-index:999;border-radius:12px;padding:10px;align-items:center;justify-content:space-between;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 12px 30px rgba(22,163,74,0.18)}
+      .mobile-cta a{color:white;font-weight:800;text-decoration:none;padding:8px 12px;border-radius:8px}
+    }
+    .itinerary li{margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <!-- NAV -->
+    <header class="nav card" role="banner">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <!-- INLINE SVG LOGO (REPLACEMENT FOR BROKEN IMAGE) -->
+          <div class="logo" aria-hidden="true" title="Terra Norte Travel Agency">
+            <!-- Simple monogram with sun and wave, transparent background -->
+            <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terra Norte logo">
+              <rect width="64" height="64" rx="12" fill="white"/>
+              <g transform="translate(6,6)">
+                <circle cx="22" cy="8" r="6" fill="#F59E0B" />
+                <path d="M0 36 C10 26, 24 26, 34 36 C44 46, 58 46, 64 36" stroke="#16A34A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <text x="2" y="32" font-family="Poppins, sans-serif" font-weight="700" font-size="14" fill="#0b1320">TN</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="brand" style="line-height:1">
+            <h1>TERRA NORTE</h1>
+            <div class="tag">TARANAT AGRAGSAK TAYON! — Northern Luzon & beyond</div>
+          </div>
+        </div>
+
+        <nav class="nav-center" role="navigation" aria-label="Main menu">
+          <div class="menu" id="mainMenu">
+            <a href="#about">About</a>
+            <a href="#explore">Explore</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+            <a href="#book" class="ghost">Book</a>
+          </div>
+        </nav>
+
+        <div class="nav-right">
+          <a class="btn ghost" href="#contact">Contact</a>
+          <button class="btn" id="callTopBtn">📞 Call to Book</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="Blue Lagoon Pagudpud"></div>
+      <div class="overlay">
+        <div class="hero-card fade-up" style="max-width:640px">
+          <h2>Discover Ilocos Norte — curated 3-day tours & authentic Filipino hospitality</h2>
+          <p class="small">Experience the beauty of the Philippines with Terra Norte Travel Agency, your trusted companion on every journey! We are a Filipino travel agency dedicated to showcasing the rich culture, breathtaking sceneries, and warm hospitality of Northern Luzon and beyond.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <button class="btn" id="heroCallBtn">📞 Call to Book</button>
+            <a class="btn ghost" href="#book">Reserve Online</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER (UPDATED WITH YOUR IMAGE LIST) -->
+    <div class="slider-wrapper card fade-up" id="mainSliderSection" aria-roledescription="carousel">
+      <div class="slider" id="slider">
+        <div class="slide"><img loading="lazy" src="https://robinsonsoffices.com/sites/default/files/resizing%20_TERA_gallery%20inner%201.jpg" alt="Terra Norte Office (Placeholder)"><div class="slide-caption">Terra Norte Office</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://preview.redd.it/t309j6y8yxw01.jpg?width=1280&crop=smart&auto=webp&s=d17d37c3e6672623f4912277bd3ac9e503994fbb" alt="Paoay Church"><div class="slide-caption">Paoay Church (San Agustin)</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/30/Cape_Bojeador_Lighthouse_Landscaped_Gardens.jpg" alt="Cape Bojeador Lighthouse"><div class="slide-caption">Cape Bojeador Lighthouse</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://travelthroughparadise.com/images/Articles/Blue_Lagoon_Beach/Beach%20Blue%20Lagoon%202-min.jpg" alt="Blue Lagoon Pagudpud"><div class="slide-caption">Blue Lagoon — Pagudpud</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://i0.wp.com/bosestiamianan.com/wp-content/uploads/2022/02/3-scaled.jpg?fit=2560%2C1772&ssl=1" alt="Bangui Windmills"><div class="slide-caption">Bangui Windmills</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Kapurpurawan_Rock_Formation_Medium_shot_2021.jpg" alt="Kapurpurawan Rock Formation"><div class="slide-caption">Kapurpurawan Rock Formation</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/f6/05/92/south-side-of-the-beachfront.jpg?w=900&h=-1&s=1" alt="Saud Beach Pagudpud"><div class="slide-caption">Saud Beach, Pagudpud</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6CSJd52WuafHblUjvVVXpesbe-0Ph057TEqFYwG9GIYcDK5KQvqhc2VfYhPHB0y7dobFge4Czgmb722AxWigpgQ046y-t8cU02HoF0T7nPT6nDGkeJno2xOTN_I70SBo1yvSMgE93z04/w1200-h630-p-k-no-nu/Malacanang+of+the+North.JPG" alt="Malacañang of the North"><div class="slide-caption">Malacañang of the North</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://ak-d.tripcdn.com/images/0HJ6d12000h9lwa1a6DF1_C_1200_800_Q70.jpg?proc=source%2ftrip" alt="Marcos Museum"><div class="slide-caption">Marcos Museum</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://gttp.images.tshiftcdn.com/463989/x/0/museo-ilocos-norte.jpg?crop=1.91%3A1&fit=crop&width=1200" alt="Museo Ilocos Norte"><div class="slide-caption">Museo Ilocos Norte</div></div>
+
+        <div class="slide"><img loading="lazy" src="https://venvi.com/wp-content/uploads/2025/05/1-scaled.jpg" alt="Viven Hotel (sample)"><div class="slide-caption">Viven Hotel — Accommodation Partner</div></div>
+      </div>
+
+      <div class="slider-controls">
+        <button aria-label="Previous" onclick="moveSlide(-1)">⟨</button>
+        <button aria-label="Next" onclick="moveSlide(1)">⟩</button>
+      </div>
+    </div>
+    <div class="slider-dots" id="dots" aria-hidden="false"></div>
+
+    <main class="grid" style="margin-top:12px">
+      <section>
+        <div class="card fade-up" id="about">
+          <h3>ABOUT US</h3>
+          <p class="small">
+            Experience the beauty of the Philippines with Terra Norte Travel Agency, your trusted companion on every journey! We are a Filipino travel agency dedicated to showcasing the rich culture, breathtaking sceneries, and warm hospitality of Northern Luzon and beyond.
+          </p>
+        </div>
+
+        <div class="card fade-up" id="explore" style="margin-top:12px">
+          <h3>EXPLORE ILOCOS NORTE</h3>
+          <p class="small">
+            Explore Ilocos Norte, where Laoag’s history and Pagudpud’s pristine shores meet the untouched beauty of its hidden towns. Discover iconic landmarks, vibrant culture, and secret escapes in one unforgettable journey. See the Ilocos Norte you know… and the one you’ve yet to uncover.
+          </p>
+        </div>
+
+        <div class="card fade-up" id="packages" style="margin-top:12px">
+          <h3>PACKAGES</h3>
+
+          <div style="margin-top:8px">
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <div style="flex:1;min-width:220px">
+                <div style="background:linear-gradient(180deg,#ffffff, #fbfffb);padding:12px;border-radius:12px;border:1px solid rgba(8,18,28,0.04)">
+                  <div style="font-weight:700">Standard Rate</div>
+                  <div class="muted">₱50,000 — 3-day package (van, hotels, guide, meals)</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:220px">
+                <div style="background:linear-gradient(180deg,#fff,#fff);padding:12px;border-radius:12px;border:1px solid rgba(8,18,28,0.04)">
+                  <div style="font-weight:700">Promo Rate</div>
+                  <div class="muted">₱45,000 — limited promo</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:220px">
+                <div style="background:linear-gradient(180deg,#fff,#fff);padding:12px;border-radius:12px;border:1px solid rgba(8,18,28,0.04)">
+                  <div style="font-weight:700">Early Booking</div>
+                  <div class="muted">₱45,000 – ₱2,000 = ₱43,000 (₱2,000 discount)</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:220px">
+                <div style="background:linear-gradient(180deg,#fff,#fff);padding:12px;border-radius:12px;border:1px solid rgba(8,18,28,0.04)">
+                  <div style="font-weight:700">Birthday Celebrant</div>
+                  <div class="muted">₱45,000 – ₱1,000 = ₱44,000 (₱1,000 discount)</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:220px">
+                <div style="background:linear-gradient(180deg,#f8fff8,#ffffff);padding:12px;border-radius:12px;border:1px solid rgba(8,18,28,0.04)">
+                  <div style="font-weight:700">Group Promo</div>
+                  <div class="muted">Book 5, Get 1 FREE — 1 free slot for every 5 paid bookings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px 0;font-size:14px">Itinerary (Detailed)</h4>
+            <div style="font-size:14px;color:var(--muted);line-height:1.6">
+              <strong>Day 1</strong>
+              <ul class="itinerary">
+                <li>Malacañang of the North</li>
+                <li>Paoay Church</li>
+                <li>Marcos Museum</li>
+                <li>Paoay Sand Dunes adventure (4x4)</li>
+                <li>Bangui Windmill</li>
+                <li>Sinking bell tower</li>
+              </ul>
+
+              <strong>Day 2</strong>
+              <ul class="itinerary">
+                <li>Patapat Viaduct</li>
+                <li>Cape Bojeador Lighthouse</li>
+                <li>Kapurpurawan Rock Formation</li>
+                <li>Blue Lagoon</li>
+                <li>Stairway to Heaven Viewpoint</li>
+                <li>Saud Beach</li>
+                <li>Museo Ilocos Norte & souvenir shopping</li>
+              </ul>
+
+              <strong>Day 3</strong>
+              <ul class="itinerary">
+                <li>Calle Crisologo</li>
+                <li>Crisologo Museum</li>
+                <li>Bantayan Church Bell Tower</li>
+                <li>Plaza Salcedo</li>
+                <li>Baluarte Resort and Mini Zoo</li>
+                <li>Island Souvenirs Shop</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card fade-up" id="inclusions" style="margin-top:12px">
+          <h3>INCLUSIONS</h3>
+          <ul class="small" style="padding-left:18px;margin-top:8px;color:var(--muted)">
+            <li>Roundtrip Van Transfer (Manila ⇄ Ilocos ⇄ Manila)</li>
+            <li>2 Nights Hotel Stay (Laoag & Pagudpud)</li>
+            <li>All Entrance Fees & 4x4 Sand Dunes Ride</li>
+            <li>Tour Guide / Coordinator</li>
+            <li>Daily Meals & Souvenir</li>
+            <li>Promos: Book 5, Get 1 FREE</li>
+            <li>₱500 OFF for early bookings</li>
+            <li>₱1,000 OFF for birthday celebrants</li>
+          </ul>
+        </div>
+
+        <div class="card fade-up" style="margin-top:12px">
+          <h3>ACCOMMODATION PARTNER</h3>
+          <p class="small">
+            VIVEN HOTEL AND NEST RESORT<br><br>
+            For a relaxing and memorable stay, Terra Norte Travel Agency partners with Viven Hotel, a modern and elegant accommodation offering premium comfort in Laoag, Ilocos Norte. Guests can enjoy spacious rooms, top-notch amenities, and warm hospitality, with convenient access to major attractions and local lifestyle destinations.
+          </p>
+        </div>
+
+        <div class="card fade-up" style="margin-top:12px">
+          <h3>EXCLUSIONS</h3>
+          <p class="small" style="color:var(--muted)">
+            Personal expenses, souvenirs/pasalubong, additional tours or side trips, accommodation upgrades, damaged or lost luggage.
+          </p>
+        </div>
+
+        <div class="card fade-up" style="margin-top:12px">
+          <h3>TERMS &amp; CONDITIONS</h3>
+          <div class="small" style="color:var(--muted);line-height:1.5">
+            <strong>Booking Policy:</strong> A minimum of 50% down payment is required to confirm the booking. Reservations without payment will not be considered confirmed.<br><br>
+            <strong>Payment Policy:</strong> Full payment must be settled at least 7 days before the travel date. All payments are non-refundable once the booking is confirmed.<br><br>
+            <strong>Cancellation &amp; Refund:</strong> Payments are non-refundable. Rescheduling is allowed only for valid reasons (medical, government restrictions, natural calamities) and subject to availability.<br><br>
+            <strong>Responsibility Clause:</strong> The agency shall not be liable for delays or cancellations due to circumstances beyond its control.<br><br>
+            By confirming the booking, the client agrees to abide by all the terms and conditions stated above.
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card fade-up contact-box" id="contact">
+          <div style="font-weight:700;margin-bottom:8px">CONTACT INFORMATION</div>
+          <div class="muted" style="line-height:1.6">
+            📞 <a id="phoneLink" href="tel:+639774821096" style="color:inherit;text-decoration:none;font-weight:600">0977-482-1096</a><br>
+            📧 <a href="mailto:terranortetravelsgency@gmail.com" style="color:inherit;text-decoration:none">terranortetravelsgency@gmail.com</a><br>
+            📱 <span style="font-weight:600">@terranortetravel</span><br>
+            📍 Barangay Santa Joaquina, Laoag, Ilocos Norte
+          </div>
+
+          <div style="margin-top:12px">
+            <button class="btn" id="callAsideBtn" style="width:100%">Call to Book</button>
+          </div>
+        </div>
+
+        <div class="card fade-up" id="book" style="margin-top:14px">
+          <div style="font-weight:700;margin-bottom:8px">Book Now</div>
+          <form id="bookingFull" class="form" onsubmit="handleBooking(event)" autocomplete="on">
+            <input name="name" placeholder="Full name" required aria-label="Full name">
+            <input name="phone" placeholder="Phone number" required aria-label="Phone number">
+            <input name="email" placeholder="Email" type="email" required aria-label="Email address">
+            <select name="package" aria-label="Package selection">
+              <option value="standard">Standard Rate ₱50,000</option>
+              <option value="promo">Promo Rate ₱45,000</option>
+              <option value="early">Early Booking ₱43,000</option>
+              <option value="birthday">Birthday Celebrant ₱44,000</option>
+            </select>
+            <input name="date" type="date" required aria-label="Travel date">
+            <textarea name="notes" placeholder="Notes (optional)" rows="3" aria-label="Notes"></textarea>
+
+            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+              <button class="btn" type="submit">Reserve</button>
+              <button type="button" class="btn ghost" id="downloadFull">Export HTML</button>
+            </div>
+          </form>
+          <div id="msgFull" class="muted" style="margin-top:10px"></div>
+        </div>
+
+        <div class="card fade-up" style="margin-top:14px;text-align:center">
+          <div style="font-weight:700">Share / QR</div>
+          <div class="muted" style="margin-top:8px">Scan to open booking page</div>
+          <img id="qrImg" class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Terra%20Norte%20Booking" alt="QR code" width="200" height="200" style="margin-top:8px;border-radius:8px;border:1px solid rgba(8,18,28,0.03)">
+        </div>
+      </aside>
+    </main>
+
+    <div class="footer">© Terra Norte Travel Agency — All rights reserved</div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-hidden="true">
+    <div style="text-align:center">
+      <img id="lbImg" src="" alt="">
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <!-- Mobile sticky CTA -->
+  <div class="mobile-cta" id="mobileCta">
+    <div style="font-weight:800">Need quick help?</div>
+    <a href="#book">BOOK NOW</a>
+  </div>
+
+  <script>
+    const PHONE = '+639774821096';
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // entrance animations
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{
+        setTimeout(()=>el.classList.add('visible'), 90*i);
+      });
+
+      // set QR to current page + #book (so it opens booking)
+      try {
+        const qr = document.getElementById('qrImg');
+        const url = window.location.href.split('#')[0] + '#book';
+        qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(url);
+      } catch(e){ /* ignore */ }
+
+      // attach call handlers that attempt to open tel:; fallback to copying number
+      const callButtons = [document.getElementById('callTopBtn'), document.getElementById('heroCallBtn'), document.getElementById('callAsideBtn')];
+      callButtons.forEach(btn=>{
+        if(!btn) return;
+        btn.addEventListener('click', ()=>{
+          try {
+            // best-effort: open tel (works on mobile and some desktops)
+            window.location.href = 'tel:' + PHONE;
+            // also attempt window.open as fallback
+            setTimeout(()=>{ try{ window.open('tel:' + PHONE); }catch(e){} }, 300);
+          } catch(err){
+            // fallback: copy to clipboard and show message
+            copyFallback();
+          }
+        });
+      });
+
+      // also make phone link clickable with copy fallback for desktops
+      document.getElementById('phoneLink').addEventListener('click', (e)=>{
+        // allow default on mobile; on desktop we try open tel then fallback
+        try {
+          // let native behavior happen
+        } catch(e){}
+      });
+
+      // export html button
+      document.getElementById('downloadFull').addEventListener('click', function(e){
+        e.preventDefault();
+        const doctype = '<!doctype html>\n';
+        const head = document.querySelector('head').innerHTML;
+        const body = document.querySelector('body').innerHTML;
+        const full = doctype + '<html lang="en">\n<head>\n' + head + '\n</head>\n<body>\n' + body + '\n</body>\n</html>';
+        const blob = new Blob([full], {type: 'text/html'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Terra-Norte-Updated.html';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      // slider & dots setup
+      const slider = document.getElementById('slider');
+      const slides = document.querySelectorAll('.slide');
+      const dotsContainer = document.getElementById('dots');
+      slides.forEach((_,i)=>{
+        const dot=document.createElement('div');
+        dot.className='dot'+(i===0?' active':'');
+        dot.onclick=()=>goTo(i);
+        dot.setAttribute('aria-label','Go to slide ' + (i+1));
+        dotsContainer.appendChild(dot);
+      });
+
+      // auto play setup below
+    });
+
+    function copyFallback(){
+      const msg = document.getElementById('msgFull');
+      // try copy to clipboard
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(PHONE).then(()=>{
+          msg.textContent = 'Phone number copied to clipboard: ' + PHONE + ' — Paste into your phone dialer to call.';
+        }).catch(()=>{
+          msg.textContent = 'Please call: ' + PHONE;
+        });
+      } else {
+        msg.textContent = 'Please call: ' + PHONE;
+      }
+    }
+
+    // Booking form handler: keeps current behaviour + sends mailto link
+    function handleBooking(e){
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const data = Object.fromEntries(f.entries());
+      const msg = document.getElementById('msgFull');
+      msg.textContent = 'Booking request received — we will contact you to confirm. Thank you!';
+      console.log('Booking:', data);
+      const subject = encodeURIComponent('Booking request — Terra Norte');
+      const bodyLines = [
+        `Name: ${data.name || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Email: ${data.email || ''}`,
+        `Package: ${data.package || ''}`,
+        `Date: ${data.date || ''}`,
+        `Notes: ${data.notes || ''}`
+      ];
+      const mailto = `mailto:terranortetravelsgency@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+      // present optional mailto link
+      const link = document.createElement('a');
+      link.href = mailto;
+      link.textContent = 'Click here to email booking details to the agency (optional)';
+      link.style.display = 'inline-block';
+      link.style.marginTop = '8px';
+      link.style.color = 'var(--text)';
+      // remove existing optional link if present
+      const old = document.getElementById('bookingMailLink');
+      if(old) old.remove();
+      link.id = 'bookingMailLink';
+      msg.appendChild(document.createElement('br'));
+      msg.appendChild(link);
+    }
+
+    // Slider controls and autoplay
+    let currentIndex = 0;
+    function update(){ 
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(-${currentIndex*100}%)`;
+      document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i===currentIndex));
+    }
+    function moveSlide(step){ 
+      const slides = document.querySelectorAll('.slide');
+      currentIndex = (currentIndex + step + slides.length) % slides.length; update();
+    }
+    function goTo(i){ currentIndex=i; update(); }
+    let auto = setInterval(()=>moveSlide(1),5000);
+    document.getElementById('mainSliderSection').addEventListener('mouseenter', ()=>clearInterval(auto));
+    document.getElementById('mainSliderSection').addEventListener('mouseleave', ()=>auto=setInterval(()=>moveSlide(1),5000));
+
+    // Lightbox for slider images (click to enlarge)
+    document.getElementById('slider').addEventListener('click', (e)=>{
+      const img = e.target.closest('.slide')?.querySelector('img');
+      if(!img) return;
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCaption = document.getElementById('lbCaption');
+      lbImg.src = img.src;
+      lbCaption.textContent = img.alt || '';
+      lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false');
+    });
+    document.getElementById('lightbox').addEventListener('click', ()=>{ 
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); 
+      document.getElementById('lbImg').src = '';
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('.nav a, .btn.ghost[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href && href.startsWith('#')){
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
